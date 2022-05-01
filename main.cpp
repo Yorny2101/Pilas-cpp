@@ -7,6 +7,7 @@ struct Nodo{   //nodo de la pila
 };
 
 void add_pile(Nodo *&, int);
+void remove_pile(Nodo *&, int &);
 
 int main() {
 
@@ -17,8 +18,15 @@ void add_pile(Nodo *&pila, int n){
     nuevo_nodo ->dato = n;
     nuevo_nodo -> siguiente = pila; //enlace con los datos q se tenian con anterioridad
     pila = nuevo_nodo;              // asinacion del nuevo nodo a pila
-    
 
+
+}
+
+void remove_pile(Nodo *&pila, int &n){
+    Nodo *aux = pila;
+    n = aux ->dato;
+    pila = aux ->siguiente;
+    delete aux;
 
 
 }
